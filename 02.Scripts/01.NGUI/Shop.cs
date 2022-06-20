@@ -412,7 +412,8 @@ public class Shop : MonoBehaviour {
             {
                 if (screen == 0)
                 {
-                    SceneManager.LoadScene(4);
+                    PlayerPrefs.SetString("Scene", "MainScene");
+                    SceneManager.LoadScene("LoadScene");
                 }
                 else if (screen == 1)
                 {
@@ -3177,7 +3178,8 @@ public class Shop : MonoBehaviour {
     {
         if(screen ==0)
         {
-            SceneManager.LoadScene(4);
+            PlayerPrefs.SetString("Scene", "MainScene");
+            SceneManager.LoadScene("LoadScene");
         }
         else if(screen ==1)
         {

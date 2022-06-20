@@ -2125,7 +2125,8 @@ public class GameManager : MonoBehaviour
     public void Exit()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(4);
+        PlayerPrefs.SetString("Scene", "MainScene");
+        SceneManager.LoadScene("LoadScene");
     }
 
     IEnumerator CreateMonster()
@@ -2215,7 +2216,8 @@ public class GameManager : MonoBehaviour
     }
     public void ReGame()
     {
-        SceneManager.LoadScene(7);
+        PlayerPrefs.SetString("Scene", "InGameScene");
+        SceneManager.LoadScene("LoadScene");
     }
     public void UnPause()
     {

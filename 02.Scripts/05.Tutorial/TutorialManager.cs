@@ -315,7 +315,8 @@ public class TutorialManager : MonoBehaviour {
                 QuestNumber = 1;
                 PlayerPrefs.SetInt("QuestNumber", QuestNumber);
             }
-            SceneManager.LoadScene(4);
+            PlayerPrefs.SetString("Scene", "MainScene");
+            SceneManager.LoadScene("LoadScene");
         }
     }
     public void BlackChoice()
@@ -389,7 +390,8 @@ public class TutorialManager : MonoBehaviour {
     public void pauseNo()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(4);
+        PlayerPrefs.SetString("Scene", "MainScene");
+        SceneManager.LoadScene("LoadScene");
     }
 
     void Update()

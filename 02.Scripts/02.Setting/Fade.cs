@@ -38,7 +38,6 @@ public class Fade : MonoBehaviour {
         SurUI.SetActive(false);
         StartUI.SetActive(false);
         NotionUI.SetActive(false);
-        MainSong.Pause();
         m_Fade.enabled = true;
         source = GetComponent<AudioSource>();
         source.PlayOneShot(Water, 1.0f);
@@ -73,7 +72,7 @@ public class Fade : MonoBehaviour {
         yield return new WaitForSeconds(0.6f);
         Logo3.SetActive(true);
         source.PlayOneShot(Shot1, 1f);
-        MainSong.UnPause();
+        MainSong.Play();
         yield return new WaitForSeconds(0.8f);
         StartUI.SetActive(true);
         StartCoroutine(UISetting());
@@ -97,12 +96,14 @@ public class Fade : MonoBehaviour {
     {
         if(Tutorial ==0)
         {
-            SceneManager.LoadScene(6);
+            PlayerPrefs.SetString("Scene", "TutorialScene");
         }
         else
         {
-            SceneManager.LoadScene(4);
+            PlayerPrefs.SetString("Scene", "MainScene");
         }
+
+        SceneManager.LoadScene("LoadScene");
     }
     public void Touch()
     {

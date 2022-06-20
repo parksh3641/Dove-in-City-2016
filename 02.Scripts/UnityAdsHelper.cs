@@ -23,58 +23,58 @@ public class UnityAdsHelper : MonoBehaviour
             txtCon.text = "남은횟수 : " + ConNum.ToString();
         }
     }
-    public void ShowRewardedAd()
-    {
-        if (Advertisement.IsReady("rewardedVideo"))
-        {
-            if(RewardNumber ==0)
-            {
-                var options = new ShowOptions { resultCallback = HandleShowResult };
-                Advertisement.Show("rewardedVideo", options);
-            }
-            else if(RewardNumber == 1)
-            {
-                if(ConNum > 0)
-                {
-                    ConNum -= 1;
-                    txtCon.text = "남은횟수 : "+ConNum.ToString();
-                    var options = new ShowOptions { resultCallback = HandleShowResult };
-                    Advertisement.Show("rewardedVideo", options);
-                }
-                else
-                {
-                    Debug.Log("광고보기 제한!");
-                }
-            }
-        }
-    }
+    //public void ShowRewardedAd()
+    //{
+    //    if (Advertisement.IsReady("rewardedVideo"))
+    //    {
+    //        if (RewardNumber == 0)
+    //        {
+    //            var options = new ShowOptions { resultCallback = HandleShowResult };
+    //            Advertisement.Show("rewardedVideo", options);
+    //        }
+    //        else if (RewardNumber == 1)
+    //        {
+    //            if (ConNum > 0)
+    //            {
+    //                ConNum -= 1;
+    //                txtCon.text = "남은횟수 : " + ConNum.ToString();
+    //                var options = new ShowOptions { resultCallback = HandleShowResult };
+    //                Advertisement.Show("rewardedVideo", options);
+    //            }
+    //            else
+    //            {
+    //                Debug.Log("광고보기 제한!");
+    //            }
+    //        }
+    //    }
+    //}
 
-    private void HandleShowResult(ShowResult result)
-    {
-        switch (result)
-        {
-            case ShowResult.Finished:
-                Debug.Log("The ad was successfully shown.");
-                if(RewardNumber ==0)
-                {
-                    int A = Random.Range(15, 31);
-                    BD += A;
-                    PlayerPrefs.SetInt("BD", BD);
-                    AdsNumber += 1;
-                    PlayerPrefs.SetInt("AdsNumber", AdsNumber);
-                    UNITGet();
-                }
-                else if(RewardNumber ==1)
-                {
-                    Continue();
-                }
-                break;
-            case ShowResult.Skipped:
-                Debug.Log("The ad was skipped before reaching the end.");
-                break;
-            case ShowResult.Failed:
-                Debug.LogError("The ad failed to be shown.");
-                break;
-        }
-    }
+    //private void HandleShowResult(ShowResult result)
+    //{
+    //    switch (result)
+    //    {
+    //        case ShowResult.Finished:
+    //            Debug.Log("The ad was successfully shown.");
+    //            if (RewardNumber == 0)
+    //            {
+    //                int A = Random.Range(15, 31);
+    //                BD += A;
+    //                PlayerPrefs.SetInt("BD", BD);
+    //                AdsNumber += 1;
+    //                PlayerPrefs.SetInt("AdsNumber", AdsNumber);
+    //                UNITGet();
+    //            }
+    //            else if (RewardNumber == 1)
+    //            {
+    //                Continue();
+    //            }
+    //            break;
+    //        case ShowResult.Skipped:
+    //            Debug.Log("The ad was skipped before reaching the end.");
+    //            break;
+    //        case ShowResult.Failed:
+    //            Debug.LogError("The ad failed to be shown.");
+    //            break;
+    //    }
+    //}
 }

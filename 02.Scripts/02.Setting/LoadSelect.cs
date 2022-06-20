@@ -136,7 +136,7 @@ public class LoadSelect : MonoBehaviour {
     }
     IEnumerator Load()
     {
-        AsyncOperation async = SceneManager.LoadSceneAsync(Number);
+        AsyncOperation async = SceneManager.LoadSceneAsync(PlayerPrefs.GetString("Scene"));
         while (!async.isDone)
         {
             float progress = async.progress * 100.0f;

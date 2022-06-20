@@ -79,7 +79,8 @@ public class NewTalk : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene(4);
+            PlayerPrefs.SetString("Scene", "MainScene");
+            SceneManager.LoadScene("LoadScene");
         }
     }
     IEnumerator ModeCheck()
@@ -325,7 +326,8 @@ public class NewTalk : MonoBehaviour
     }
     public void Exit()
     {
-        SceneManager.LoadScene(4);
+        PlayerPrefs.SetString("Scene", "MainScene");
+        SceneManager.LoadScene("LoadScene");
     }
     public void OneBtn() //현재
     {

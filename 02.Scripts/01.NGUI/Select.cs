@@ -975,12 +975,14 @@ public class Select : MonoBehaviour
                 }
                 else
                 {
-                    SceneManager.LoadScene(3);
+                    PlayerPrefs.SetString("Scene", "InGameScene");
+                    SceneManager.LoadScene("LoadScene");
                 }
             }
             else
             {
-                SceneManager.LoadScene(3);
+                PlayerPrefs.SetString("Scene", "InGameScene");
+                SceneManager.LoadScene("LoadScene");
             }
         }
     }
@@ -1004,14 +1006,16 @@ public class Select : MonoBehaviour
                     {
                         HardTicket -= 1;
                         PlayerPrefs.SetInt("HardTicket", HardTicket);
-                        SceneManager.LoadScene(3);
+                        PlayerPrefs.SetString("Scene", "InGameScene");
+                        SceneManager.LoadScene("LoadScene");
                     }
                 }
                 else
                 {
                     HardTicket -= 1;
                     PlayerPrefs.SetInt("HardTicket", HardTicket);
-                    SceneManager.LoadScene(3);
+                    PlayerPrefs.SetString("Scene", "InGameScene");
+                    SceneManager.LoadScene("LoadScene");
                 }
             }
             else
@@ -1038,7 +1042,9 @@ public class Select : MonoBehaviour
             HardTicket -= 1;
             PlayerPrefs.SetInt("HardTicket", HardTicket);
         }
-        SceneManager.LoadScene(3);
+
+        PlayerPrefs.SetString("Scene", "InGameScene");
+        SceneManager.LoadScene("LoadScene");
     }
 
     public void Shop()
@@ -1046,7 +1052,8 @@ public class Select : MonoBehaviour
         source.PlayOneShot(Click, 0.75f);
         if (screen ==0)
         {
-            SceneManager.LoadScene(5);
+            PlayerPrefs.SetString("Scene", "ShopScene");
+            SceneManager.LoadScene("LoadScene");
         }
     }
     public void GoldShop()
@@ -1055,7 +1062,8 @@ public class Select : MonoBehaviour
         PlayerPrefs.SetInt("Shop", 1);
         if (screen == 0)
         {
-            SceneManager.LoadScene(5);
+            PlayerPrefs.SetString("Scene", "ShopScene");
+            SceneManager.LoadScene("LoadScene");
         }
     }
     public void DiaShop()
@@ -1064,13 +1072,15 @@ public class Select : MonoBehaviour
         PlayerPrefs.SetInt("Shop", 2);
         if (screen == 0)
         {
-            SceneManager.LoadScene(5);
+            PlayerPrefs.SetString("Scene", "ShopScene");
+            SceneManager.LoadScene("LoadScene");
         }
     }
     public void BagShop()
     {
         screen = 0;
-        SceneManager.LoadScene(5);
+        PlayerPrefs.SetString("Scene", "ShopScene");
+        SceneManager.LoadScene("LoadScene");
     }
     //public void Talk()
     //{
@@ -1195,7 +1205,8 @@ public class Select : MonoBehaviour
     public void tutorial()
     {
         screen = 0;
-        SceneManager.LoadScene(6);
+        PlayerPrefs.SetString("Scene", "TutorialScene");
+        SceneManager.LoadScene("LoadScene");
     }
     public void Ad()
     {
@@ -1272,7 +1283,8 @@ public class Select : MonoBehaviour
     public void DataDel()
     {
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene(0);
+        PlayerPrefs.SetString("Scene", "TitleScene");
+        SceneManager.LoadScene("LoadScene");
     }
     public void MiniGame()
     {
@@ -1281,7 +1293,8 @@ public class Select : MonoBehaviour
             if(Dove >=4)
             {
                 screen = 0;
-                SceneManager.LoadScene(11);
+                PlayerPrefs.SetString("Scene", "TalkScene");
+                SceneManager.LoadScene("LoadScene");
             }
             else
             {
@@ -1310,7 +1323,8 @@ public class Select : MonoBehaviour
     public void TutorialReplayA()
     {
         screen = 0;
-        SceneManager.LoadScene(6);
+        PlayerPrefs.SetString("Scene", "TutorialScene");
+        SceneManager.LoadScene("LoadScene");
     }
     public void TutorialReplayB()
     {
